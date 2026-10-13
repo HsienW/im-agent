@@ -21,14 +21,33 @@ from app.rag.retriever import retrieve_knowledge
 
 
 # 1. Tool Adapter：重用 Day 1 的業務函式
+# @tool
+# def search_im_messages(keyword: str) -> str:
+#     """Search IM messages containing a keyword."""
+#
+#     results = search_messages(keyword)
+#
+#     return json.dumps(
+#         results,
+#         ensure_ascii=False,
+#     )
+
 @tool
 def search_im_messages(keyword: str) -> str:
-    """Search IM messages containing a keyword."""
+    """
+    Search IM messages using literal substring matching.
 
-    results = search_messages(keyword)
+    The keyword must be a short, distinctive substring
+    likely to appear verbatim in the original message.
 
+    This tool does not support semantic matching.
+    Avoid broad natural-language phrases as keywords.
+
+    If the result is empty, retry with a shorter
+    keyword before reporting that no messages exist.
+    """
     return json.dumps(
-        results,
+        search_messages(keyword),
         ensure_ascii=False,
     )
 
@@ -52,6 +71,17 @@ Rules:
 - If evidence is insufficient, say so.
 - Do not claim that a business action was executed
   unless a tool confirms successful execution.
+
+IM search policy:
+  - search_im_messages performs literal substring matching,
+    not semantic retrieval.
+  - Extract a short, distinctive search term from the user's
+    question rather than passing the full question.
+  - If no messages are found, retry once with a shorter
+    keyword derived from the same question.
+  - After the retry, if no evidence is found, explicitly
+    state that the result is unavailable.
+  - Never fabricate message records, source IDs, or owners.
 """
 
 

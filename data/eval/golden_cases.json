@@ -1,0 +1,46 @@
+
+[
+  {
+    "id": "im-login-owner",
+    "question": "請使用 search_im_messages 搜尋登入問題，回答誰負責排查，並引用訊息 ID。",
+    "expected_tool": "search_im_messages",
+    "expected_source": "m001",
+    "required_terms": ["Bob", "登入"],
+    "forbidden_phrases": []
+  },
+  {
+    "id": "im-deadline",
+    "question": "請使用 search_im_messages 搜尋週五相關訊息，回答誰承諾在週五前完成，並引用訊息 ID。",
+    "expected_tool": "search_im_messages",
+    "expected_source": "m002",
+    "required_terms": ["Bob", "週五"],
+    "forbidden_phrases": []
+  },
+  {
+    "id": "rag-group-history",
+    "question": "請使用 search_knowledge 查詢：退出群組後能否查看之前的歷史訊息？只根據文件回答，引用 Chunk ID。",
+    "expected_tool": "search_knowledge",
+    "expected_source": "im-permissions:001",
+    "required_terms": ["歷史訊息", "權限"],
+    "forbidden_phrases": [
+      "必定無法查看歷史訊息",
+      "即喪失歷史訊息存取權限"
+    ]
+  },
+  {
+    "id": "rag-task-approval",
+    "question": "請使用 search_knowledge 查詢：Agent 正式建立業務任務前需要什麼確認？引用 Chunk ID。",
+    "expected_tool": "search_knowledge",
+    "expected_source": "agent-approval-policy:001",
+    "required_terms": ["確認", "權限"],
+    "forbidden_phrases": []
+  },
+  {
+    "id": "rag-message-recall",
+    "question": "請使用 search_knowledge 查詢：IM 訊息撤回後，普通使用者還能從一般查詢 API 讀取原文嗎？引用 Chunk ID。",
+    "expected_tool": "search_knowledge",
+    "expected_source": "im-message-lifecycle:001",
+    "required_terms": ["撤回", "原文"],
+    "forbidden_phrases": []
+  }
+]

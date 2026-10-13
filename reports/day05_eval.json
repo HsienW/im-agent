@@ -1,0 +1,326 @@
+{
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "total_duration_ms": 16635
+  },
+  "cases": [
+    {
+      "case_id": "im-login-owner",
+      "thread_id": "eval-ef176f0e56c248169b225a50f3b215c3",
+      "passed": true,
+      "checks": {
+        "non_empty_answer": true,
+        "correct_tool": true,
+        "source_retrieved": true,
+        "source_cited": true,
+        "required_terms": true,
+        "forbidden_phrases": true
+      },
+      "missing_terms": [],
+      "found_forbidden": [],
+      "called_tools": [
+        "search_im_messages",
+        "search_im_messages"
+      ],
+      "retrieved_sources": [
+        "m001"
+      ],
+      "answer": "Based on the IM message found:\n\n- The person responsible for troubleshooting the login issue is **Bob**.\n- This is stated in message ID **m001**, authored by Alice: \"登入 API 有 500 錯誤，Bob 負責排查。\"",
+      "trace": [
+        {
+          "type": "human"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_im_messages"
+          ],
+          "tool_args": [
+            {
+              "name": "search_im_messages",
+              "args": {
+                "keyword": "登入問題"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_im_messages"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_im_messages"
+          ],
+          "tool_args": [
+            {
+              "name": "search_im_messages",
+              "args": {
+                "keyword": "登入"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_im_messages"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [],
+          "tool_args": []
+        }
+      ],
+      "duration_ms": 4446,
+      "token_usage": {
+        "available": true,
+        "input": 1774,
+        "output": 150
+      },
+      "estimated_chat_cost_usd": null,
+      "error_type": null
+    },
+    {
+      "case_id": "im-deadline",
+      "thread_id": "eval-aee3c0cdcb984bff90d908c0a5b94b02",
+      "passed": true,
+      "checks": {
+        "non_empty_answer": true,
+        "correct_tool": true,
+        "source_retrieved": true,
+        "source_cited": true,
+        "required_terms": true,
+        "forbidden_phrases": true
+      },
+      "missing_terms": [],
+      "found_forbidden": [],
+      "called_tools": [
+        "search_im_messages"
+      ],
+      "retrieved_sources": [
+        "m002"
+      ],
+      "answer": "根據搜尋結果，Bob 承諾在週五前完成。  \n訊息 ID：m002",
+      "trace": [
+        {
+          "type": "human"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_im_messages"
+          ],
+          "tool_args": [
+            {
+              "name": "search_im_messages",
+              "args": {
+                "keyword": "週五"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_im_messages"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [],
+          "tool_args": []
+        }
+      ],
+      "duration_ms": 2286,
+      "token_usage": {
+        "available": true,
+        "input": 1146,
+        "output": 71
+      },
+      "estimated_chat_cost_usd": null,
+      "error_type": null
+    },
+    {
+      "case_id": "rag-group-history",
+      "thread_id": "eval-895ae030d5154113b7996f473e1fea43",
+      "passed": true,
+      "checks": {
+        "non_empty_answer": true,
+        "correct_tool": true,
+        "source_retrieved": true,
+        "source_cited": true,
+        "required_terms": true,
+        "forbidden_phrases": true
+      },
+      "missing_terms": [],
+      "found_forbidden": [],
+      "called_tools": [
+        "search_knowledge"
+      ],
+      "retrieved_sources": [
+        "agent-approval-policy:001",
+        "im-message-lifecycle:001",
+        "im-permissions:001"
+      ],
+      "answer": "根據知識文件 `im-permissions.md`，退出群組後能否查看歷史訊息並無絕對保證，需依產品資料保留政策與使用者權限判斷，不能預設全部可見。具體說明如下：\n\n> 「退出群組之前的歷史訊息是否可以查看，必須根據產品資料保留政策與使用者權限判斷，不能預設全部可見。」  \n> —— 出處：`im-permissions.md`, Chunk ID: `im-permissions:001`\n\n其他文件（如 `im-message-lifecycle.md`、`agent-approval-policy.md`）未提供關於退出群組後歷史訊息存取的進一步規範。",
+      "trace": [
+        {
+          "type": "human"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_knowledge"
+          ],
+          "tool_args": [
+            {
+              "name": "search_knowledge",
+              "args": {
+                "query": "退出群組後能否查看之前的歷史訊息"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_knowledge"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [],
+          "tool_args": []
+        }
+      ],
+      "duration_ms": 4584,
+      "token_usage": {
+        "available": true,
+        "input": 1644,
+        "output": 175
+      },
+      "estimated_chat_cost_usd": null,
+      "error_type": null
+    },
+    {
+      "case_id": "rag-task-approval",
+      "thread_id": "eval-03da3b4757c34273ba3836b5ecb099ee",
+      "passed": true,
+      "checks": {
+        "non_empty_answer": true,
+        "correct_tool": true,
+        "source_retrieved": true,
+        "source_cited": true,
+        "required_terms": true,
+        "forbidden_phrases": true
+      },
+      "missing_terms": [],
+      "found_forbidden": [],
+      "called_tools": [
+        "search_knowledge"
+      ],
+      "retrieved_sources": [
+        "agent-approval-policy:001",
+        "im-message-lifecycle:001",
+        "im-permissions:001"
+      ],
+      "answer": "根據知識文件 `agent-approval-policy.md`，Agent 在正式建立業務任務前，**必須取得具有權限的使用者確認**，才能將任務草稿寫入業務系統。\n\n引用 Chunk ID：`agent-approval-policy:001`",
+      "trace": [
+        {
+          "type": "human"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_knowledge"
+          ],
+          "tool_args": [
+            {
+              "name": "search_knowledge",
+              "args": {
+                "query": "Agent 建立業務任務前確認事項"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_knowledge"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [],
+          "tool_args": []
+        }
+      ],
+      "duration_ms": 2603,
+      "token_usage": {
+        "available": true,
+        "input": 1637,
+        "output": 84
+      },
+      "estimated_chat_cost_usd": null,
+      "error_type": null
+    },
+    {
+      "case_id": "rag-message-recall",
+      "thread_id": "eval-afbf6774687b460ea913609b35c46474",
+      "passed": true,
+      "checks": {
+        "non_empty_answer": true,
+        "correct_tool": true,
+        "source_retrieved": true,
+        "source_cited": true,
+        "required_terms": true,
+        "forbidden_phrases": true
+      },
+      "missing_terms": [],
+      "found_forbidden": [],
+      "called_tools": [
+        "search_knowledge"
+      ],
+      "retrieved_sources": [
+        "agent-approval-policy:001",
+        "im-message-lifecycle:001",
+        "im-permissions:001"
+      ],
+      "answer": "根據知識文件 `im-message-lifecycle.md`，訊息撤回後，**普通使用者不可再透過一般訊息查詢 API 讀取原文**。\n\n引用 Chunk ID：`im-message-lifecycle:001`。",
+      "trace": [
+        {
+          "type": "human"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [
+            "search_knowledge"
+          ],
+          "tool_args": [
+            {
+              "name": "search_knowledge",
+              "args": {
+                "query": "IM 訊息撤回 後 普通使用者 查詢 API 讀取原文"
+              }
+            }
+          ]
+        },
+        {
+          "type": "tool",
+          "name": "search_knowledge"
+        },
+        {
+          "type": "assistant",
+          "tool_calls": [],
+          "tool_args": []
+        }
+      ],
+      "duration_ms": 2716,
+      "token_usage": {
+        "available": true,
+        "input": 1669,
+        "output": 89
+      },
+      "estimated_chat_cost_usd": null,
+      "error_type": null
+    }
+  ]
+}
