@@ -62,6 +62,17 @@ python -m pytest              # uses fake models, no API key needed
 python -m labs.day05_eval     # runs golden cases against the real model, writes reports/day05_eval.json
 ```
 
+### Deep research metrics (ported from chat-gun)
+
+`app/eval/research_metrics.py` re-scores runs recorded by chat-gun's TypeScript Deep Researcher
+evaluation (`research-eval-v1`): citation verification, no-source refusal, clarify routing,
+fetched-source usability, rerank latency and nearest-rank P50/P90 latency. The recorded live runs
+under `data/research-eval/` are checked for exact parity with the TypeScript scores:
+
+```bash
+python -m app.eval.research_metrics data/research-eval/research-eval-v1-2026-11-05-r1/run-rule.json --check
+```
+
 ## Known Limitations
 
 - The vector store and conversation checkpoints are in-memory and are lost on restart.
