@@ -203,6 +203,13 @@ def summarize_run(observations: list[dict[str, Any]], scores: list[dict[str, Any
                 sum(1 for obs in reranked if (obs["rerank"].get("changedSelections") or 0) > 0), len(ok)
             ),
         }
+    guarded = [obs for obs in completed if obs.get("citationGuard") is not None]
+    if guarded:
+        summary["citationGuard"] = {
+            "answersModified": _rate(sum(1 for obs in guarded if obs["citationGuard"]["modified"]), len(guarded)),
+            "removedMarkers": sum(obs["citationGuard"]["removedMarkers"] for obs in guarded),
+            "removedUrls": sum(obs["citationGuard"]["removedUrls"] for obs in guarded),
+        }
     summary.update(
         {
             "cases": len(observations),

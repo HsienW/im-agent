@@ -103,6 +103,21 @@ def test_nearest_rank_and_js_rounding():
     assert summarize_latency([2, 3])["meanMs"] == 3
 
 
+def test_citation_guard_summary():
+    base = {"category": "answerable", "status": "completed", "latencyMs": 1, "answerMode": "research", "queries": [],
+            "searchResultCount": 1, "rankedUrls": [], "sources": SOURCES, "answer": "x [1]"}
+    observations = [
+        {**base, "caseId": "ans-01", "citationGuard": {"modified": True, "removedMarkers": 2, "removedUrls": 1}},
+        {**base, "caseId": "ans-02", "citationGuard": {"modified": False, "removedMarkers": 0, "removedUrls": 1}},
+    ]
+    summary = rescore({"observations": observations})[1]
+    assert summary["citationGuard"] == {
+        "answersModified": {"passed": 1, "n": 2, "rate": 0.5},
+        "removedMarkers": 2,
+        "removedUrls": 2,
+    }
+
+
 RUN_FILES = sorted(RUN_DIR.glob("*/run-*.json"))
 
 
