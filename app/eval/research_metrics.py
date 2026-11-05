@@ -34,7 +34,8 @@ CATEGORIES = ("answerable", "no_source", "clarify")
 
 _MARKER = re.compile(r"\[([0-9\s,，、\-–]+)\]")
 _RANGE = re.compile(r"^([0-9]+)\s*[-–]\s*([0-9]+)$")
-_URL = re.compile(r"https?://[^\s<>\"'`）)\]]+")
+# Full-width punctuation ends a URL: answers often write "https://host/path（說明）".
+_URL = re.compile(r"https?://[^\s<>\"'`）)\]（，。、；：！？「」【】《》]+")
 _TRAILING = re.compile(r"[)\]>.,;:!?'\"，。）]+$")
 _DEFAULT_PORTS = {"http": 80, "https": 443}
 

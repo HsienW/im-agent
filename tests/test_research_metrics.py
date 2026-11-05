@@ -29,6 +29,13 @@ def test_markers_lists_ranges_and_years():
     assert extract_citation_markers("full-width digits [１] are not markers") == []
 
 
+def test_url_ends_at_full_width_punctuation():
+    assert extract_urls("官方頁面 https://kubernetes.io/releases/（官方發布日曆）與 https://github.com/k/k/releases，原始") == [
+        "https://kubernetes.io/releases",
+        "https://github.com/k/k/releases",
+    ]
+
+
 def test_urls_are_normalized_like_whatwg():
     assert extract_urls("See (https://Example.org/b/). Also [x](https://example.com/a#top)") == [
         "https://example.org/b",
