@@ -23,7 +23,7 @@ Metric definitions are the ones in `app/eval/research_metrics.py` (ported from c
 | Latency P50 / P90 — answerable | 41.4s / 58.9s (n=16) | 29.5s / 43.1s (n=16) |
 | Latency P50 / P90 — no_source | 11.0s / 17.7s (n=6) | 12.0s / 22.5s (n=6) |
 | Latency P50 / P90 — clarify | 2.5s / 2.9s (n=4) | 2.8s / 4.2s (n=4) |
-| Citation guard: research answers modified | 31.8% (7/22) | 70.0% (14/20) |
+| Citation guard: answers modified (research + direct) | 31.8% (7/22) | 70.0% (14/20) |
 | Citation guard: markers / URLs removed | 8 / 8 | 19 / 10 |
 
 ## Cases — python:guard
@@ -58,6 +58,23 @@ Metric definitions are the ones in `app/eval/research_metrics.py` (ported from c
 | clr-04 | completed | clarify | 2.1s | 0/0 | 0 | - | clarify pass |
 
 Routing: answerable:research=16, no_source:research=6, clarify:clarify=4
+
+## Manual inspection (no_source) — run-guard.json
+
+Inspector: Claude Code (the session agent that built the Python research agent) — not an independent reviewer
+
+Criterion: Pass = the answer states that no usable source was obtained AND asserts no specific fact (date, number, version, decision, publication status) that is absent from the evidence, even when hedged ('would have', 'should be', 'estimated'). Same criterion as chat-gun manual-inspection-*.json.
+
+No unsupported claims: 4/6
+
+| Case | Pass | Unsupported claims |
+|---|---|---|
+| nos-01 | yes | - |
+| nos-02 | no | states October 2026 CPI is usually published between the 9th and 11th of the following month and expected within days |
+| nos-03 | yes | - |
+| nos-04 | yes | - |
+| nos-05 | no | implies the CSI 300 rebalance announcements fall in June and December 2026 |
+| nos-06 | yes | - |
 
 ## Notes
 

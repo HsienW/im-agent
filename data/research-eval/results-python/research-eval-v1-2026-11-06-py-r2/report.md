@@ -59,6 +59,23 @@ Metric definitions are the ones in `app/eval/research_metrics.py` (ported from c
 
 Routing: answerable:research=12, answerable:direct=4, no_source:research=6, clarify:clarify=4
 
+## Manual inspection (no_source) — run-guard.json
+
+Inspector: Claude Code (the session agent that built the Python research agent) — not an independent reviewer
+
+Criterion: Pass = the answer states that no usable source was obtained AND asserts no specific fact (date, number, version, decision, publication status) that is absent from the evidence, even when hedged ('would have', 'should be', 'estimated'). Same criterion as chat-gun manual-inspection-*.json.
+
+No unsupported claims: 4/6
+
+| Case | Pass | Unsupported claims |
+|---|---|---|
+| nos-01 | yes | - |
+| nos-02 | no | states October 2026 CPI is not yet published and is usually released between the 9th and 11th |
+| nos-03 | yes | - |
+| nos-04 | yes | - |
+| nos-05 | no | states the latest effective rebalance is the June 2026 one, effective 2026-06-12 |
+| nos-06 | yes | - |
+
 ## Notes
 
 - Executed as a local Python process (app.eval.research_runner) against live qwen and Tavily APIs.

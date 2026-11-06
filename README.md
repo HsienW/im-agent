@@ -73,6 +73,23 @@ under `data/research-eval/` are checked for exact parity with the TypeScript sco
 python -m app.eval.research_metrics data/research-eval/research-eval-v1-2026-11-05-r1/run-rule.json --check
 ```
 
+### Web research agent (`app/research`)
+
+A LangGraph graph: pydantic-validated planner (research / direct / clarify, falling back to one
+query on failure) → Tavily search → URL dedup and rule ranking → fetch top 5 through an egress check
+(http/https, ports 80/443, public addresses only) → usability check (no error, ≥ 200 characters) →
+synthesis with a deterministic citation guard. Ranking and guard rules are ported from chat-gun.
+
+The live run uses the same `research-eval-v1` cases, model, search provider and scorer as the
+TypeScript agent; results and the side-by-side comparison are in `data/research-eval/results-python/`
+(see `analysis.md`). It needs `TAVILY_API_KEY` in `.env`:
+
+```bash
+python -m app.eval.research_runner --doh-url https://223.5.5.5/resolve --reference data/research-eval/research-eval-v1-2026-11-05-r1/run-guard.json
+```
+
+`--doh-url` is only needed when a TUN / fake-ip proxy makes every host resolve to 198.18.0.0/15.
+
 ## Known Limitations
 
 - The vector store and conversation checkpoints are in-memory and are lost on restart.
