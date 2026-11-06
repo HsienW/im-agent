@@ -2,7 +2,7 @@
 
 An IM collaboration assistant agent built with LangGraph and FastAPI, covering tool calling, RAG, SSE streaming, and offline evaluation.
 
-> Learning project: all data is synthetic and storage is in-memory. Not a production system.
+> All data is synthetic and storage is in-memory. Not a production system.
 
 ## Features
 
