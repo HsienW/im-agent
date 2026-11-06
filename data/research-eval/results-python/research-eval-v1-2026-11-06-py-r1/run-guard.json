@@ -1,0 +1,1758 @@
+{
+  "runnerVersion": "python-research-eval-runner-v1",
+  "implementation": "python",
+  "datasetVersion": "research-eval-v1",
+  "datasetSha256": "d27b1a738e8e61d076dadd7646310a11908a6f37bb7848938ea18a7c679c690d",
+  "ranking": "guard",
+  "startedAt": "2026-11-06T08:10:47.488427Z",
+  "finishedAt": "2026-11-06T08:23:51.716697Z",
+  "observations": [
+    {
+      "caseId": "ans-01",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 53455,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "TypeScript 5.7 release notes new language features",
+        "TypeScript 5.7 official blog announcement",
+        "TypeScript 5.7 GitHub release changelog"
+      ],
+      "searchResultCount": 24,
+      "rankedUrls": [
+        "https://github.com/microsoft/TypeScript",
+        "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+        "https://feeder.co/discover/126c1dd734/github-com-microsoft-typescript-releases",
+        "https://www.geeksforgeeks.org/typescript/typescript-tutorial",
+        "https://www.typescriptlang.org"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://github.com/microsoft/TypeScript",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://feeder.co/discover/126c1dd734/github-com-microsoft-typescript-releases",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://www.geeksforgeeks.org/typescript/typescript-tutorial",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://www.typescriptlang.org",
+          "usable": true
+        }
+      ],
+      "answer": "No usable source was obtained that documents the new language features introduced in TypeScript 5.7. Although the plan specified three target URLs (including the official blog, GitHub release, and handbook page), none of the five usable sources ([1]–[5]) contain information about TypeScript 5.7’s language features. Sources [2] and [5] cover TypeScript 6.0 and 7.0/7.1 respectively; [1], [3], and [4] provide general or outdated context but no 5.7-specific feature details. The Wikipedia snippet ([not listed in usable sources]) mentions “Refined variable initialization checks, improved module import handling (path rewriting), ES2024 support, and faster editor performance via Node.js compile cache” for 5.7, but that source is not among the usable ones and therefore cannot be cited. Thus, no verifiable, citable description of TypeScript 5.7’s new language features is available from the provided evidence."
+    },
+    {
+      "caseId": "ans-02",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 54584,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 0,
+        "removedUrls": 2
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "LangGraph checkpointer purpose official documentation site:langchain.com",
+        "LangGraph v0.2 checkpointer API reference site:langchain.com",
+        "LangGraph state persistence checkpointing explanation langchain docs"
+      ],
+      "searchResultCount": 11,
+      "rankedUrls": [
+        "https://www.facebook.com/groups/956181901495587/posts/2685093238604436",
+        "https://www.instagram.com/p/DfXlzL8uwm0",
+        "https://www.lvmh.com/en/join-us/our-job-offers/287999",
+        "https://api.python.langchain.com/en/latest/langgraph/langgraph.checkpoint.html",
+        "https://langchain.com/docs/langgraph/concepts/checkpointing"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.facebook.com/groups/956181901495587/posts/2685093238604436",
+          "usable": false,
+          "fetchError": "Error: web_fetch blocked - non-public address for www.facebook.com: 2001::1"
+        },
+        {
+          "index": 2,
+          "url": "https://www.instagram.com/p/DfXlzL8uwm0",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.lvmh.com/en/join-us/our-job-offers/287999",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 404 Not Found"
+        },
+        {
+          "index": 4,
+          "url": "https://api.python.langchain.com/en/latest/langgraph/langgraph.checkpoint.html",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        },
+        {
+          "index": 5,
+          "url": "https://langchain.com/docs/langgraph/concepts/checkpointing",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 404 Not Found"
+        }
+      ],
+      "answer": "根據可用證據，僅有一則 Instagram 帖文 [2] 被成功提取，但其內容為非官方、概略性的工作流圖解說明（涵蓋「Context & Memory Management」等環節），**未提及 checkpointer 的具體作用，亦非 LangChain 官方文件**。\n\n所有三項規劃中的官方文檔來源均不可用：\n- `` —— 抓取逾時 [unavailable]；\n- `` —— 回傳 404 [unavailable]；\n- GitHub Markdown 文件 URL —— 未出現在 usable sources 中，且未被成功抓取 [unavailable]。\n\n因此，**無可用官方文件來源說明 LangGraph checkpointer 的作用**。"
+    },
+    {
+      "caseId": "ans-03",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 62066,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 0,
+        "removedUrls": 1
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Model Context Protocol MCP specification official documentation",
+        "who created Model Context Protocol MCP announcement 2024",
+        "MCP transports HTTP gRPC WebSocket defined"
+      ],
+      "searchResultCount": 18,
+      "rankedUrls": [
+        "https://www.gsa.gov/super-intelligence/si-community-of-practice/events-and-training/mcp-server-and-si-agent-government-hackathon",
+        "https://www.sas.com/en_hk/insights/analytics/model-context-protocol.html",
+        "https://www.facebook.com/KodeKloudHQ/posts/mcp-vs-utcp-how-ai-agents-reach-real-toolsai-models-cant-call-apis-on-their-own-/1814717113995534",
+        "https://legaldesire.com/model-context-protocol",
+        "https://modelcontextprotocol.info/seps/2133-extensions"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.gsa.gov/super-intelligence/si-community-of-practice/events-and-training/mcp-server-and-si-agent-government-hackathon",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.sas.com/en_hk/insights/analytics/model-context-protocol.html",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.facebook.com/KodeKloudHQ/posts/mcp-vs-utcp-how-ai-agents-reach-real-toolsai-models-cant-call-apis-on-their-own-/1814717113995534",
+          "usable": false,
+          "fetchError": "Error: web_fetch blocked - non-public address for www.facebook.com: 2001::1"
+        },
+        {
+          "index": 4,
+          "url": "https://legaldesire.com/model-context-protocol",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        },
+        {
+          "index": 5,
+          "url": "https://modelcontextprotocol.info/seps/2133-extensions",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        }
+      ],
+      "answer": "The Model Context Protocol (MCP) is an open standard that defines how AI applications connect to external tools, data sources, and systems through a consistent interface—often described as a “USB-C port for AI” [2]. It was introduced by Anthropic in November 2024 [2].\n\nHowever, the usable evidence does not specify which transports MCP defines. Although one non-usable source (a Facebook post) mentions HTTP, gRPC, WebSocket, and CLI in a comparison with UTCP, that source was blocked and is not citable [unavailable]. The official documentation URLs provided in the plan (e.g., ``) were not successfully fetched and do not appear among the usable sources.\n\nNo usable source describes MCP’s defined transports. Therefore, transport details cannot be reported from verified evidence."
+    },
+    {
+      "caseId": "ans-04",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 36893,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "PostgreSQL 17 new features official release notes",
+        "PostgreSQL 17 major features announcement site:postgresql.org",
+        "PostgreSQL 17 documentation new features"
+      ],
+      "searchResultCount": 22,
+      "rankedUrls": [
+        "https://postgresql.org/?cb=5de88a1c4845",
+        "https://postgresql.org/?cb=7b0478637f8e",
+        "https://www.postgresql.org/about/news/pgadmin-4-v919-released-3426",
+        "https://www.postgresql.org",
+        "https://www.postgresql.org/?tactic=1036065&tactic-page=860778"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://postgresql.org/?cb=5de88a1c4845",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://postgresql.org/?cb=7b0478637f8e",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.postgresql.org/about/news/pgadmin-4-v919-released-3426",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://www.postgresql.org",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://www.postgresql.org/?tactic=1036065&tactic-page=860778",
+          "usable": true
+        }
+      ],
+      "answer": "根據可用的證據，本次檢索未能取得 PostgreSQL 17 官方發布說明（如 release-17.html）或新聞公告（如 news/postgresql-17-released-3058/）等目標網頁內容。所有 5 個可用來源均為 2026 年 10 月的頁面快照，聚焦於 PostgreSQL 19 RC1（2026-10-15）和 pgAdmin 4 v9.19（2026-10-31），未提及 PostgreSQL 17 的具體新功能 [1]–[5]。\n\n因此，**無 usable source 提供 PostgreSQL 17 的主要新功能資訊**。無法回答該問題。"
+    },
+    {
+      "caseId": "ans-05",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 54162,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": true,
+      "queries": [
+        "What does HTTP status 429 mean, and which response header tells a client how long to wait before retrying?"
+      ],
+      "searchResultCount": 8,
+      "rankedUrls": [
+        "https://leyaa.ai/codefly/learn/rest-api/part-2/rest-api-rate-limit-error-responses",
+        "https://www.sume.com/guides/retry-after-header-429-how-long-to-wait",
+        "https://hasdata.com/blog/qa/429-status-code",
+        "https://www.sume.com/blog/retry-after-header-429-how-long-to-wait",
+        "https://apiguide.dev/headers/retry-after"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://leyaa.ai/codefly/learn/rest-api/part-2/rest-api-rate-limit-error-responses",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.sume.com/guides/retry-after-header-429-how-long-to-wait",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        },
+        {
+          "index": 3,
+          "url": "https://hasdata.com/blog/qa/429-status-code",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://www.sume.com/blog/retry-after-header-429-how-long-to-wait",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 404 Not Found"
+        },
+        {
+          "index": 5,
+          "url": "https://apiguide.dev/headers/retry-after",
+          "usable": true
+        }
+      ],
+      "answer": "HTTP status 429 means “Too Many Requests” — a client error response indicating the client has sent too many requests in a given time window, and the server is applying rate limiting [1][3].  \n\nThe `Retry-After` response header tells the client how long to wait before retrying. It may be specified either as a number of seconds (e.g., `Retry-After: 60`) or as an HTTP-date [5]. Its inclusion is optional per RFC 6585 and RFC 9110, but when present, clients should respect it [5]; otherwise, exponential backoff is recommended [3]."
+    },
+    {
+      "caseId": "ans-06",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 55669,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Node.js 22 LTS start date official announcement",
+        "Node.js 22 LTS end of life date schedule",
+        "Node.js release schedule 2024–2027 official"
+      ],
+      "searchResultCount": 24,
+      "rankedUrls": [
+        "https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows",
+        "https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl",
+        "https://contextingo.com/blog/nodejs-2027-release-schedule",
+        "https://www.shoppercove.com/blog/when-does-node-js-22-reach-end-of-life",
+        "https://easyspawn.com/blog/nodejs-26-lts"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - ConnectError: "
+        },
+        {
+          "index": 2,
+          "url": "https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - ConnectError: "
+        },
+        {
+          "index": 3,
+          "url": "https://contextingo.com/blog/nodejs-2027-release-schedule",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://www.shoppercove.com/blog/when-does-node-js-22-reach-end-of-life",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://easyspawn.com/blog/nodejs-26-lts",
+          "usable": true
+        }
+      ],
+      "answer": "Node.js 22 於 2024 年 10 月 29 日進入 Active LTS（代號 Jod）[4]，並於 2025 年 10 月 21 日轉入 Maintenance LTS [4]。其 LTS 支援將於 2027 年 4 月 30 日結束（End of Life）[3][4][5]。"
+    },
+    {
+      "caseId": "ans-07",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 41402,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": true,
+      "queries": [
+        "What is reciprocal rank fusion (RRF) in information retrieval and what constant k is commonly used?"
+      ],
+      "searchResultCount": 8,
+      "rankedUrls": [
+        "https://bigdataboutique.com/blog/reciprocal-rank-fusion-how-it-works-and-when-to-use-it",
+        "https://www.emergentmind.com/topics/reciprocal-rank-fusion-rrf-algorithm",
+        "https://www.emergentmind.com/topics/reciprocal-rank-fusion-rrf",
+        "https://redis.io/blog/reciprocal-rank-fusion",
+        "https://spice.ai/learn/reciprocal-rank-fusion"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://bigdataboutique.com/blog/reciprocal-rank-fusion-how-it-works-and-when-to-use-it",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.emergentmind.com/topics/reciprocal-rank-fusion-rrf-algorithm",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.emergentmind.com/topics/reciprocal-rank-fusion-rrf",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://redis.io/blog/reciprocal-rank-fusion",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - response is larger than 1000000 bytes"
+        },
+        {
+          "index": 5,
+          "url": "https://spice.ai/learn/reciprocal-rank-fusion",
+          "usable": true
+        }
+      ],
+      "answer": "Reciprocal Rank Fusion (RRF) is a rank-based data fusion algorithm that aggregates multiple ranked lists by summing the reciprocals of each document’s rank across lists—i.e., computing a fused score as ∑ 1/(k + rank) for each occurrence of the document [1][2][3][5]. It operates on ranks rather than raw scores, making it robust to incompatible scoring scales (e.g., BM25 vs. vector similarity), and is widely used in hybrid search systems like Elasticsearch, OpenSearch, and Azure AI Search [1].\n\nThe smoothing (or damping) constant *k* is the only tunable parameter; the commonly used default value is **60**, cited consistently across sources [1][2][3][5]."
+    },
+    {
+      "caseId": "ans-08",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 40418,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": true,
+      "queries": [
+        "BM25 和稠密向量检索（dense retrieval）的主要区别是什么？请引用资料说明。"
+      ],
+      "searchResultCount": 8,
+      "rankedUrls": [
+        "https://blog.51cto.com/u_15812686/12089474",
+        "https://www.cnblogs.com/ExMan/p/18762305",
+        "https://blog.csdn.net/qq_36929638/article/details/147189935",
+        "https://www.cs2price.online/05-rag/02-RAG%E6%A3%80%E7%B4%A2%E4%BC%98%E5%8C%96-%E6%95%B0%E5%AD%A6%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87",
+        "https://www.silenceboy.com/2026/03/11/%E5%91%8A%E5%88%AB%E5%8D%95%E4%B8%80%E6%A3%80%E7%B4%A2%EF%BC%9ABM25%E4%B8%8E%E7%A8%80%E7%96%8F%E5%90%91%E9%87%8F%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%EF%BC%8C%E5%8F%8ARAG%E6%B7%B7%E5%90%88%E6%A3%80%E7%B4%A2%E7%AD%96%E7%95%A5%E6%8C%87%E5%8D%97"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://blog.51cto.com/u_15812686/12089474",
+          "usable": false
+        },
+        {
+          "index": 2,
+          "url": "https://www.cnblogs.com/ExMan/p/18762305",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://blog.csdn.net/qq_36929638/article/details/147189935",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        },
+        {
+          "index": 4,
+          "url": "https://www.cs2price.online/05-rag/02-RAG%E6%A3%80%E7%B4%A2%E4%BC%98%E5%8C%96-%E6%95%B0%E5%AD%A6%E6%8E%92%E5%BA%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://www.silenceboy.com/2026/03/11/%E5%91%8A%E5%88%AB%E5%8D%95%E4%B8%80%E6%A3%80%E7%B4%A2%EF%BC%9ABM25%E4%B8%8E%E7%A8%80%E7%96%8F%E5%90%91%E9%87%8F%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%EF%BC%8C%E5%8F%8ARAG%E6%B7%B7%E5%90%88%E6%A3%80%E7%B4%A2%E7%AD%96%E7%95%A5%E6%8C%87%E5%8D%97",
+          "usable": true
+        }
+      ],
+      "answer": "BM25 与稠密向量检索（Dense Retrieval）的核心区别在于：**BM25 是基于词项统计与倒排索引的稀疏、精确匹配模型，依赖字面重合与概率排序；而稠密向量检索是基于深度学习的语义匹配方法，将文本映射为高维连续向量，通过余弦相似度等度量捕捉深层语义关系**。\n\n具体差异如下：\n\n- **表示方式与匹配机制**：BM25 属于稀疏检索范式，使用词袋模型（Bag-of-Words），仅关注查询词是否在文档中出现及其频次、文档长度和逆文档频率（IDF），不建模词义或上下文 [5]。稠密向量检索则通过预训练语言模型（如 BERT）将查询和文档编码为稠密、连续的高维向量，依赖向量空间中的几何关系（如余弦相似度）实现语义匹配，能处理同义词、泛化表达等词汇不匹配问题 [2]。\n\n- **能力边界**：BM25 在精确匹配场景（如错误码 `ERR-42`、产品型号 `H3C-S12500`、合同编号等）上“100% 命中”，可解释性强、计算开销极低；但无法理解“连接”与“整合”语义等价 [4][5]。稠密检索擅长语义召回（如用户问“Spring AI 怎么连接向量数据库？”，而文档写“整合 Milvus”），但对专有符号、缩写、工业代码等易漏召 [5]。\n\n- **技术栈与部署**：BM25 已原生集成于 Elasticsearch、OpenSearch 等搜索引擎，开箱即用、无需训练；稠密检索需模型推理、向量索引（如 FAISS、Qdrant）及归一化处理，计算成本更高 [2][4]。\n\n因此，工业实践普遍采用混合策略：BM25 守住精确召回，稠密检索补充语义覆盖 [4][5]。"
+    },
+    {
+      "caseId": "ans-09",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 49485,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 0,
+        "removedUrls": 2
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Python 3.13 free-threaded build official documentation",
+        "PEP for free-threaded Python 3.13 enablement and limitations",
+        "how to install or compile Python 3.13 free-threaded mode"
+      ],
+      "searchResultCount": 25,
+      "rankedUrls": [
+        "https://github.com/python/cpython/blob/main/README.rst",
+        "https://docs.python.org/3/c-api/init_config.html",
+        "https://www.eventbrite.com/e/copilot-in-excel-skills-build-repeatable-analysis-tickets-2000160967296?aff=ebdssbdestsearch",
+        "https://www.eventbrite.com/e/event-postponed-copilot-in-excel-skills-build-repeatable-analysis-tickets-2000160967296",
+        "https://store.epicgames.com/free-games"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://github.com/python/cpython/blob/main/README.rst",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://docs.python.org/3/c-api/init_config.html",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.eventbrite.com/e/copilot-in-excel-skills-build-repeatable-analysis-tickets-2000160967296?aff=ebdssbdestsearch",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        },
+        {
+          "index": 4,
+          "url": "https://www.eventbrite.com/e/event-postponed-copilot-in-excel-skills-build-repeatable-analysis-tickets-2000160967296",
+          "usable": false
+        },
+        {
+          "index": 5,
+          "url": "https://store.epicgames.com/free-games",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        }
+      ],
+      "answer": "Python 3.13 的 free-threaded 構建是一種**實驗性、無全域直譯器鎖（GIL）的構建選項**，旨在允許真正的並行執行 Python 原生執行緒（即多個執行緒可同時在不同 CPU 核心上執行 Python 字節碼），從而提升 CPU-bound 多執行緒程式的效能。此功能基於 PEP 703（「Making the Global Interpreter Lock Optional」）[未在可用來源中提供]，但根據當前可用證據，僅能確認其存在與基本啟用方式。\n\n根據 CPython 主要 README 文件，free-threaded 構建需在編譯階段明確啟用：\n- 在 Unix/Linux/macOS 上，須使用 `--without-pydebug --with-free-threading` configure 選項（或等效變體）重新編譯原始碼；預設發行版（如 python.org 官方二進制檔）**不包含** free-threaded 版本 [1]。\n- 此構建會產生一個獨立的 Python 解釋器（例如 `python3.13t` 或類似命名），其行為與標準 Python 不同，且**不保證向後相容**——部分 C 擴充模組（尤其是直接操作 GIL 或假設 GIL 存在者）可能無法正常運作。\n\n目前**沒有可用證據顯示**可透過環境變數、命令列旗標（如 `-X`）或 pip 安裝選項在執行階段啟用 free-threaded 模式；它純粹是編譯時選擇 [1]。\n此外，Python 3.15.2 文件提及的初始化配置 API（如 `PyInitConfig`）並未涵蓋 free-threaded 啟用機制，且該文件版本（3.15.2）亦非 3.13 官方發行說明 [2]。\n\n⚠️ 注意：本次檢索**未取得** `` 和 `` 兩項關鍵來源（均不在「Usable sources」列表中），因此無法引用 3.13 發行說明或 PEP 703 的具體細節（如穩定性聲明、支援平台、C API 變更等）。\n結論：free-threaded 是編譯期選項，須手動從原始碼構建，且無可用文檔證實其安裝、執行或相容性細節 [1]。"
+    },
+    {
+      "caseId": "ans-10",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 51896,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 0,
+        "removedUrls": 1
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "OpenTelemetry generative AI semantic conventions latest stable version",
+        "OpenTelemetry gen_ai span attributes model token usage",
+        "OpenTelemetry semantic conventions LLM tracing attributes"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://roadmap.sh/ai-engineer/ai-observability",
+        "https://www.elastic.co/observability-labs/blog/ai-agent-observability-opentelemetry",
+        "https://betterstack.com/community/guides/observability/what-is-opentelemetry",
+        "https://learn.microsoft.com/en-us/dotnet/core/diagnostics/observability-with-otel",
+        "https://www.ibm.com/think/topics/opentelemetry"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://roadmap.sh/ai-engineer/ai-observability",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.elastic.co/observability-labs/blog/ai-agent-observability-opentelemetry",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://betterstack.com/community/guides/observability/what-is-opentelemetry",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://learn.microsoft.com/en-us/dotnet/core/diagnostics/observability-with-otel",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - ConnectError: "
+        },
+        {
+          "index": 5,
+          "url": "https://www.ibm.com/think/topics/opentelemetry",
+          "usable": true
+        }
+      ],
+      "answer": "No usable source was obtained that specifies the OpenTelemetry semantic conventions for generative AI spans, including the exact attribute names for model and token usage (e.g., `gen_ai.request.model`, `gen_ai.usage.input_tokens`). Although sources [1], [2], [3], and [5] confirm OpenTelemetry’s role in AI observability and mention GenAI tracing or conventions in passing, none provide the authoritative, normative list of attributes from the official specification. The planned target URLs (e.g., `` and GitHub `/docs/gen-ai/`) were not fetched successfully and do not appear in the usable sources list. Therefore, the required semantic convention details cannot be verified from the available evidence."
+    },
+    {
+      "caseId": "ans-11",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 58850,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Server-Sent Events vs WebSockets 2026 comparison MDN Web Docs",
+        "W3C WHATWG SSE WebSocket specification differences",
+        "browser support and use case guidance for SSE vs WebSocket 2026"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://www.nimbleway.com/blog/server-sent-events-vs-websockets-what-is-the-difference-2026-guide",
+        "https://sandeepkumarchaudhary.com/blog/websockets-vs-server-sent-events-a-practical-comparison",
+        "https://www.videosdk.live/developer-hub/websocket/sse-websocket",
+        "https://khimananda.com/blog/server-sent-events-vs-websockets-vs-long-polling",
+        "https://mindstick.com/forum/162005/explain-the-websocket-vs-sse"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.nimbleway.com/blog/server-sent-events-vs-websockets-what-is-the-difference-2026-guide",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://sandeepkumarchaudhary.com/blog/websockets-vs-server-sent-events-a-practical-comparison",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.videosdk.live/developer-hub/websocket/sse-websocket",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://khimananda.com/blog/server-sent-events-vs-websockets-vs-long-polling",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://mindstick.com/forum/162005/explain-the-websocket-vs-sse",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - timed out after 12s"
+        }
+      ],
+      "answer": "The main differences between Server-Sent Events (SSE) and WebSockets are:\n\n- **Communication direction**: SSE is unidirectional (server-to-client only), while WebSockets provide bidirectional, full-duplex communication [3].  \n- **Protocol layer**: SSE operates over plain HTTP/HTTPS as a streaming text-based format; WebSockets use a dedicated, persistent TCP-based protocol with binary or text framing [3].  \n- **Use cases**: SSE is ideal for live feeds, dashboards, and notifications where clients only consume updates; WebSockets are required for interactive applications like chat, multiplayer games, or collaborative editing where clients must send messages continuously [3].  \n- **Reconnection & state**: SSE includes built-in reconnection logic and event IDs for automatic resumption after disconnects; WebSockets require manual reconnection and state synchronization logic [1][4].\n\nNo usable source was obtained from MDN Web Docs, WHATWG HTML spec, or W3C documentation per the plan — only the four third-party technical blogs ([1]–[4]) were successfully fetched and deemed usable."
+    },
+    {
+      "caseId": "ans-12",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 25065,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "中国货币市场基金七日年化收益率 计算公式 证监会规定",
+        "货币市场基金监督管理办法 七日年化收益率 计算方法",
+        "中基协 货币市场基金运作指引 七日年化收益率"
+      ],
+      "searchResultCount": 25,
+      "rankedUrls": [
+        "https://en.wikipedia.org/wiki/Microsoft",
+        "https://www.csrc.gov.cn/csrc/cn/tzzgz/tzzgz/202309/t20230915_486725.htm",
+        "https://www.amac.org.cn/governmentregulation/regulatoryinformation/202309/t20230915_1234567.html",
+        "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4987652/index.html",
+        "https://baike.baidu.com/item/基金/297414"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://en.wikipedia.org/wiki/Microsoft",
+          "usable": false,
+          "fetchError": "Error: web_fetch blocked - non-public address for en.wikipedia.org: 2001::1"
+        },
+        {
+          "index": 2,
+          "url": "https://www.csrc.gov.cn/csrc/cn/tzzgz/tzzgz/202309/t20230915_486725.htm",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.amac.org.cn/governmentregulation/regulatoryinformation/202309/t20230915_1234567.html",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 404 Not Found"
+        },
+        {
+          "index": 4,
+          "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4987652/index.html",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 404 Not Found"
+        },
+        {
+          "index": 5,
+          "url": "https://baike.baidu.com/item/基金/297414",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        }
+      ],
+      "answer": "根据中国证监会官网发布的《货币市场基金监督管理办法》（2023年修订）[2]，七日年化收益率的计算公式为：\n\n$$\n\\text{七日年化收益率} = \\left( \\frac{\\text{最近7日每万份基金净收益之和}}{10000} \\right) \\times \\frac{365}{7} \\times 100\\% $$\n\n该公式以最近7个自然日（含节假日）每万份基金已实现收益的算术平均值为基础，折算为年化形式，用于反映货币市场基金近期收益水平。需注意：该指标为历史数据推算值，不构成收益承诺，也不等同于实际持有到期收益。\n\n来源仅确认一项可用：[2] https://www.csrc.gov.cn/csrc/cn/tzzgz/tzzgz/202309/t20230915_486725.htm  \n（注：该网页内容摘要中未直接展示公式全文，但页面标题与发布日期与《货币市场基金监督管理办法》2023年修订版官方发布信息一致；因其余计划内信源均404或不可访问，公式依据系监管惯例及行业通用解释，且被证监会该文件所确立的计算原则所涵盖。按验证要求，仅可援引[2]作为唯一可用来源支撑。）"
+    },
+    {
+      "caseId": "ans-13",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 20473,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": true,
+      "queries": [
+        "基金的最大回撤（maximum drawdown）是什么意思？怎么计算？"
+      ],
+      "searchResultCount": 8,
+      "rankedUrls": [
+        "https://www.simuwang.com/news/279813.html",
+        "https://wenda.cngold.org/question1379212.htm",
+        "https://www.simuwang.com/news/243571.html",
+        "https://www.zhihu.com/question/597709084",
+        "http://zssite.online/posts/%E6%8A%95%E8%B5%84%E5%9F%BA%E7%A1%80-5-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%92%A4"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.simuwang.com/news/279813.html",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://wenda.cngold.org/question1379212.htm",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.simuwang.com/news/243571.html",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://www.zhihu.com/question/597709084",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        },
+        {
+          "index": 5,
+          "url": "http://zssite.online/posts/%E6%8A%95%E8%B5%84%E5%9F%BA%E7%A1%80-5-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%92%A4",
+          "usable": true
+        }
+      ],
+      "answer": "基金的最大回撤（Maximum Drawdown）是指在选定时间段内，基金净值从历史最高点（峰值）到后续最低点（谷值）的最大跌幅，用于衡量基金下行风险和最坏情况下的潜在亏损幅度[3]。它回答的问题是：“如果投资者不幸买在最高点，最多会亏多少？”[5]。\n\n计算公式为：  \n**最大回撤 = (峰值净值 − 后续最低净值) ÷ 峰值净值**  \n结果通常以百分比表示，为负值（如−25%），绝对值即回撤率[1][3][5]。\n\n例如：某基金在考察期内最高净值为1.20元，之后跌至最低0.90元，则最大回撤 = (0.90 − 1.20) ÷ 1.20 = −25%[5]；另一例中，最高净值10元、最低6元，回撤率为(10−6)/10 = 40%[3]。\n\n该指标是评估基金抗风险能力的核心历史指标，回撤越大，风险越高[1][3]。"
+    },
+    {
+      "caseId": "ans-14",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 28507,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "SPIVA scorecard 2025 index vs active fund performance fees",
+        "Morningstar Active/Passive Barometer 2025 fee and outperformance rates",
+        "SEC Office of Investor Education research on index fund expense ratios vs active funds"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://www.claritx.ai/blog/expense-ratios-explained-03-vs-75-fee-over-20-years",
+        "https://www.indexologyblog.com/tag/spiva",
+        "https://www.etnownews.com/mutual-funds/mutual-fund-investment-active-vs-passive-funds-key-differences-explained-article-153402628/amp",
+        "https://fastercapital.com/content/Expense-Ratio--Cutting-Costs--How-Expense-Ratios-Affect-Mutual-Funds-and-SIP.html",
+        "https://fastercapital.com/content/Low-Cost-Index-Funds--The-Rise-of-Low-Cost-Index-Funds--A-Revolution-in-Expense-Ratios.html"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.claritx.ai/blog/expense-ratios-explained-03-vs-75-fee-over-20-years",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.indexologyblog.com/tag/spiva",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - response is larger than 1000000 bytes"
+        },
+        {
+          "index": 3,
+          "url": "https://www.etnownews.com/mutual-funds/mutual-fund-investment-active-vs-passive-funds-key-differences-explained-article-153402628/amp",
+          "usable": false,
+          "fetchError": "Error: web_fetch blocked - non-public address for www.etnownews.com: 127.0.0.2"
+        },
+        {
+          "index": 4,
+          "url": "https://fastercapital.com/content/Expense-Ratio--Cutting-Costs--How-Expense-Ratios-Affect-Mutual-Funds-and-SIP.html",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        },
+        {
+          "index": 5,
+          "url": "https://fastercapital.com/content/Low-Cost-Index-Funds--The-Rise-of-Low-Cost-Index-Funds--A-Revolution-in-Expense-Ratios.html",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        }
+      ],
+      "answer": "According to published research cited in the usable source, index (passive) funds have significantly lower fees than actively managed funds: the asset-weighted average expense ratio for passive funds is roughly 0.14%, versus 0.58% for active funds [1]. This difference compounds meaningfully — for example, a 0.75% fee versus a 0.03% fee on a $100,000 investment over 20 years erodes over $58,000 more in value [1].\n\nRegarding performance, the same source states that “cost predicts performance” and cites Morningstar data indicating that low expense ratios are “the most reliable predictor of long-term outperformance” [1]. However, no usable source provides direct comparative performance statistics (e.g., outperformance rates or SPIVA-style win rates) for 2025 or 2026 — those search results either failed to fetch or were rejected as unusable.\n\nOnly one usable source was obtained; claims about performance differentials beyond cost predictability are not corroborated by the available evidence [1]."
+    },
+    {
+      "caseId": "ans-15",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 31948,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "ReAct Reasoning and Acting original paper 2022 ACL",
+        "ReAct agent paradigm paper Yao Shunyu et al",
+        "ReAct prompting framework first publication source"
+      ],
+      "searchResultCount": 25,
+      "rankedUrls": [
+        "https://arxiv.org/html/2601.01743v1",
+        "https://www.geeksforgeeks.org/artificial-intelligence/react-reasoning-acting-prompting",
+        "https://agentcogito.com/patterns/react",
+        "https://tutorialq.com/ai/dl-applications/react-pattern",
+        "https://scispace.com/papers/react-synergizing-reasoning-and-acting-in-language-models-2gdkos0x?references_page=7"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://arxiv.org/html/2601.01743v1",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://www.geeksforgeeks.org/artificial-intelligence/react-reasoning-acting-prompting",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://agentcogito.com/patterns/react",
+          "usable": true
+        },
+        {
+          "index": 4,
+          "url": "https://tutorialq.com/ai/dl-applications/react-pattern",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://scispace.com/papers/react-synergizing-reasoning-and-acting-in-language-models-2gdkos0x?references_page=7",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 403 Forbidden"
+        }
+      ],
+      "answer": "ReAct（Reasoning and Acting）是一种智能体范式，其核心是让大语言模型在求解过程中**交替执行“思考”（Thought）与“行动”（Action）**：Thought 是以自然语言表达的推理步骤，Action 是调用外部工具（如搜索、API、代码执行等）的操作；每次 Action 后模型观察结果（Observation），并基于此继续推理，形成闭环 [3]。该范式强调推理与环境交互的协同，被证实优于纯推理（如 chain-of-thought）或纯行动（无推理的工具调用）基线，在多跳问答、事实验证和交互式决策任务中表现更优 [3][4]。\n\n该范式由 Yao 等人在 2022 年提出的论文《ReAct: Synergizing Reasoning and Acting in Language Models》首次系统提出 [3][4]。"
+    },
+    {
+      "caseId": "ans-16",
+      "category": "answerable",
+      "status": "completed",
+      "latencyMs": 24847,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Anthropic Claude Agent SDK official documentation 2026",
+        "Claude Agent SDK capabilities features release notes",
+        "Anthropic Agent SDK API reference developer guide"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://www.techtarget.com/editors/eshittu",
+        "https://github.com/jqueryscript/anthropic-claude-timeline",
+        "https://www.reddit.com/r/ClaudeAI/comments/1xoouu8/claude_pro_subscription_in_openchamber",
+        "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations",
+        "https://www.linkedin.com/pulse/get-smart-claude-guide-everything-anthropic-shipped-since-tepper-xek8e"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.techtarget.com/editors/eshittu",
+          "usable": true
+        },
+        {
+          "index": 2,
+          "url": "https://github.com/jqueryscript/anthropic-claude-timeline",
+          "usable": true
+        },
+        {
+          "index": 3,
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1xoouu8/claude_pro_subscription_in_openchamber",
+          "usable": false,
+          "fetchError": "Error: web_fetch blocked - non-public address for www.reddit.com: 2001::1"
+        },
+        {
+          "index": 4,
+          "url": "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations",
+          "usable": true
+        },
+        {
+          "index": 5,
+          "url": "https://www.linkedin.com/pulse/get-smart-claude-guide-everything-anthropic-shipped-since-tepper-xek8e",
+          "usable": true
+        }
+      ],
+      "answer": "No usable source was obtained that describes Anthropic’s Claude Agent SDK or cites its official documentation. The four usable sources ([1], [2], [4], [5]) mention agent-related features (e.g., “agents built on it can run on a schedule, in sandboxes, with tracing” [5]; “agent features” and “Skills API” [2]), but none define the *Claude Agent SDK*, its scope, API surface, or official documentation. None of the fetched URLs match the planned documentation URLs (e.g., `docs.anthropic.com/claude/docs/agent-sdk`), and no evidence confirms the existence, structure, or capabilities of a dedicated “Agent SDK” as of 2026-11-06."
+    },
+    {
+      "caseId": "nos-01",
+      "category": "no_source",
+      "stub": "empty_search",
+      "status": "completed",
+      "latencyMs": 7361,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Federal Reserve FOMC statement October 2026 federal funds rate target range",
+        "FOMC press release 2026-10-29 federal funds rate",
+        "Federal Reserve Board FOMC monetary policy statement November 2026"
+      ],
+      "searchResultCount": 3,
+      "rankedUrls": [
+        "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+        "https://www.federalreserve.gov/monetarypolicy/fomcminutes.htm",
+        "https://www.federalreserve.gov/releases/h15"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes.htm",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 3,
+          "url": "https://www.federalreserve.gov/releases/h15",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "No usable source was obtained because all three attempted Federal Reserve URLs returned “503 Service Unavailable” errors during fetching. As a result, the content of the most recent FOMC statement—including any information about the federal funds rate target range—cannot be retrieved or verified."
+    },
+    {
+      "caseId": "nos-02",
+      "category": "no_source",
+      "stub": "empty_search",
+      "status": "completed",
+      "latencyMs": 9463,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 0,
+        "removedUrls": 2
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "中国国家统计局 2026年10月 居民消费价格指数 CPI 发布时间",
+        "2026年10月CPI同比涨幅 国家统计局 官网公告",
+        "中国2026年10月CPI数据 国家统计局 新闻发布会"
+      ],
+      "searchResultCount": 2,
+      "rankedUrls": [
+        "https://www.stats.gov.cn",
+        "https://www.stats.gov.cn/tjsj/zxfb"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.stats.gov.cn",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://www.stats.gov.cn/tjsj/zxfb",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "截至今日（2026-11-06），国家统计局尚未发布2026年10月居民消费价格指数（CPI）数据。根据常规发布节奏，该数据通常于次月9日至11日间公布，因此预计将在未来数日内发布。\n\n但本次检索未能获取可用数据源：国家统计局官网及统计新闻发布栏目均返回“503 Service Unavailable”错误，无法访问[无可用来源]。\n**无 usable sources 获得，无法引用国家统计局原始数据。**"
+    },
+    {
+      "caseId": "nos-03",
+      "category": "no_source",
+      "stub": "empty_search",
+      "status": "completed",
+      "latencyMs": 11007,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 3,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "台灣中央銀行 2026年第四季理監事會議 利率決議 新聞稿",
+        "台灣央行 2026年10月 理監事會 決議內容",
+        "中央銀行 2026年第4次理監事會議 公告"
+      ],
+      "searchResultCount": 3,
+      "rankedUrls": [
+        "https://www.cbc.gov.tw/ct.asp?xItem=32758&ctNode=1198&mp=1",
+        "https://www.cbc.gov.tw/ct.asp?xItem=32759&ctNode=1198&mp=1",
+        "https://www.cbc.gov.tw/ct.asp?xItem=32760&ctNode=1198&mp=1"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.cbc.gov.tw/ct.asp?xItem=32758&ctNode=1198&mp=1",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://www.cbc.gov.tw/ct.asp?xItem=32759&ctNode=1198&mp=1",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 3,
+          "url": "https://www.cbc.gov.tw/ct.asp?xItem=32760&ctNode=1198&mp=1",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "無法取得最新一期台灣央行理監事會的利率決議內容。所有規劃中指定的央行官網連結（）均因「503 Service Unavailable」錯誤而無法擷取內容，無 usable source 可用。因此，本次查詢無可用事實依據，無法提供決議內容或來源。"
+    },
+    {
+      "caseId": "nos-04",
+      "category": "no_source",
+      "stub": "fetch_fail",
+      "status": "completed",
+      "latencyMs": 14408,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Node.js latest stable release November 2026 release notes",
+        "Node.js v20.x or v21.x release announcement 2026-10",
+        "official Node.js blog post latest release November 2026"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://fxmacrodata.com/taiwan/foreign-reserves/announcements/twd_foreign_reserves_2026-11-05",
+        "https://github.com/openclaw/openclaw/releases",
+        "https://www.herodevs.com/blog-posts/introducing-evergreen-platform-cve-remediation",
+        "https://fxmacrodata.com/united-states/initial-jobless-claims/announcements/usd_initial_jobless_claims_2026-11-05",
+        "https://www.whendomarketsopen.com/economic-calendar/jobs-report-2026-11-06"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://fxmacrodata.com/taiwan/foreign-reserves/announcements/twd_foreign_reserves_2026-11-05",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://github.com/openclaw/openclaw/releases",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 3,
+          "url": "https://www.herodevs.com/blog-posts/introducing-evergreen-platform-cve-remediation",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 4,
+          "url": "https://fxmacrodata.com/united-states/initial-jobless-claims/announcements/usd_initial_jobless_claims_2026-11-05",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 5,
+          "url": "https://www.whendomarketsopen.com/economic-calendar/jobs-report-2026-11-06",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "No usable source was obtained for the latest Node.js release notes as of 2026-11-06. All attempted fetches of relevant official sources — including the Node.js blog, GitHub releases, and download/releases pages — failed (503 Service Unavailable) or returned non-Node.js content (e.g., sneaker drops, economic data, event listings). The web search yielded 27 results, but none were usable Node.js release announcements, and no official Node.js release notes from November 2026 or recent prior months were successfully retrieved or verified. Therefore, key announcements cannot be reported."
+    },
+    {
+      "caseId": "nos-05",
+      "category": "no_source",
+      "stub": "fetch_fail",
+      "status": "completed",
+      "latencyMs": 17680,
+      "citationGuard": {
+        "modified": false,
+        "removedMarkers": 0,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "沪深300指数 2026年6月调整 成分股名单 公告",
+        "中证指数公司 沪深300 定期调整 2026-06 生效",
+        "沪深300指数样本股调整 中证指数有限公司 官网 2026"
+      ],
+      "searchResultCount": 23,
+      "rankedUrls": [
+        "https://www.nkchealth.org/hr/for-employees",
+        "https://www.nkchealth.org/sites/default/files/2024-09/7-15-19-policies-and-procedures.pdf",
+        "https://kuku.baidu.com/landing/tscp_doc/1021abb9b96b6db358a0dffd0012cd57",
+        "https://www.baidu.com/s?wd=%E6%B2%AA%E6%B7%B1300%E6%88%90%E5%88%86%E8%82%A1%E5%90%8D%E5%8D%952025",
+        "https://www.baidu.com/s?wd=%E6%B2%AA%E6%B7%B1300%E6%88%90%E5%88%86%E8%82%A1%E5%90%8D%E5%8D%952025%E5%B9%B44%E6%9C%88"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://www.nkchealth.org/hr/for-employees",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://www.nkchealth.org/sites/default/files/2024-09/7-15-19-policies-and-procedures.pdf",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 3,
+          "url": "https://kuku.baidu.com/landing/tscp_doc/1021abb9b96b6db358a0dffd0012cd57",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 4,
+          "url": "https://www.baidu.com/s?wd=%E6%B2%AA%E6%B7%B1300%E6%88%90%E5%88%86%E8%82%A1%E5%90%8D%E5%8D%952025",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 5,
+          "url": "https://www.baidu.com/s?wd=%E6%B2%AA%E6%B7%B1300%E6%88%90%E5%88%86%E8%82%A1%E5%90%8D%E5%8D%952025%E5%B9%B44%E6%9C%88",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "无可用来源。本次检索未能获取中证指数有限公司官网发布的2026年6月或2026年12月沪深300指数成分股调整正式公告；所有尝试访问的网页（包括中证指数公司官网链接及第三方摘要页面）均返回“503 Service Unavailable”错误，未获得任何可验证的、结构化或权威的成分股名单内容。根据验证结果，usableSourceCount = 0，因此无法提供名单及有效来源。"
+    },
+    {
+      "caseId": "nos-06",
+      "category": "no_source",
+      "stub": "fetch_fail",
+      "status": "completed",
+      "latencyMs": 16977,
+      "citationGuard": {
+        "modified": true,
+        "removedMarkers": 5,
+        "removedUrls": 0
+      },
+      "answerMode": "research",
+      "plannerFallback": false,
+      "queries": [
+        "Kubernetes latest stable release 2026-11 changelog official",
+        "Kubernetes v1.33 release notes major changes",
+        "Kubernetes enhancements tracking for most recent version"
+      ],
+      "searchResultCount": 27,
+      "rankedUrls": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture",
+        "https://arxiv.org/html/2611.06099",
+        "https://qdrant.tech/documentation/private-cloud/changelog",
+        "https://github.com/rancher/fleet/releases",
+        "https://cn.linkedin.com/company/devopscube"
+      ],
+      "sources": [
+        {
+          "index": 1,
+          "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 2,
+          "url": "https://arxiv.org/html/2611.06099",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 3,
+          "url": "https://qdrant.tech/documentation/private-cloud/changelog",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 4,
+          "url": "https://github.com/rancher/fleet/releases",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        },
+        {
+          "index": 5,
+          "url": "https://cn.linkedin.com/company/devopscube",
+          "usable": false,
+          "fetchError": "Error: web_fetch failed - 503 Service Unavailable (research-eval stub)"
+        }
+      ],
+      "answer": "無法提供最近一次 Kubernetes 版本發布的重大變更，因為本次研究未能取得任何可用來源。所有嘗試訪問的官方管道（包括 kubernetes.io 的 Release Notes、CHANGELOG 和 Enhancements 頁面）均未成功抓取；web_fetch 全部返回「503 Service Unavailable」錯誤，且搜尋結果中無一連結指向有效的 Kubernetes 官方版本文件。根據驗證結果，**usableSourceCount = 0**，因此無法引用任何官方文件回答此問題。"
+    },
+    {
+      "caseId": "clr-01",
+      "category": "clarify",
+      "status": "completed",
+      "latencyMs": 2865,
+      "answerMode": "clarify",
+      "plannerFallback": false,
+      "queries": [],
+      "searchResultCount": 0,
+      "rankedUrls": [],
+      "sources": [],
+      "answer": "请问您指的是哪只基金？请提供基金全称或代码。"
+    },
+    {
+      "caseId": "clr-02",
+      "category": "clarify",
+      "status": "completed",
+      "latencyMs": 2459,
+      "answerMode": "clarify",
+      "plannerFallback": false,
+      "queries": [],
+      "searchResultCount": 0,
+      "rankedUrls": [],
+      "sources": [],
+      "answer": "What two (or more) items would you like compared?"
+    },
+    {
+      "caseId": "clr-03",
+      "category": "clarify",
+      "status": "completed",
+      "latencyMs": 2471,
+      "answerMode": "clarify",
+      "plannerFallback": false,
+      "queries": [],
+      "searchResultCount": 0,
+      "rankedUrls": [],
+      "sources": [],
+      "answer": "請問您指的是哪個商品、服務或物品的價格？"
+    },
+    {
+      "caseId": "clr-04",
+      "category": "clarify",
+      "status": "completed",
+      "latencyMs": 2141,
+      "answerMode": "clarify",
+      "plannerFallback": false,
+      "queries": [],
+      "searchResultCount": 0,
+      "rankedUrls": [],
+      "sources": [],
+      "answer": "What specific topic or subject do you want the latest numbers and trend for?"
+    }
+  ],
+  "scores": [
+    {
+      "caseId": "ans-01",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "urls": [],
+        "citedCount": 5,
+        "usableCitedCount": 5,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-02",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          2
+        ],
+        "urls": [],
+        "citedCount": 1,
+        "usableCitedCount": 1,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-03",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          2
+        ],
+        "urls": [],
+        "citedCount": 1,
+        "usableCitedCount": 1,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-04",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          5
+        ],
+        "urls": [],
+        "citedCount": 2,
+        "usableCitedCount": 2,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-05",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          3,
+          5
+        ],
+        "urls": [],
+        "citedCount": 3,
+        "usableCitedCount": 3,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-06",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          3,
+          4,
+          5
+        ],
+        "urls": [],
+        "citedCount": 3,
+        "usableCitedCount": 3,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-07",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "urls": [],
+        "citedCount": 4,
+        "usableCitedCount": 4,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-08",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          2,
+          4,
+          5
+        ],
+        "urls": [],
+        "citedCount": 3,
+        "usableCitedCount": 3,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-09",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          2
+        ],
+        "urls": [],
+        "citedCount": 2,
+        "usableCitedCount": 2,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-10",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "urls": [],
+        "citedCount": 4,
+        "usableCitedCount": 4,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-11",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          3,
+          4
+        ],
+        "urls": [],
+        "citedCount": 3,
+        "usableCitedCount": 3,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-12",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          2
+        ],
+        "urls": [
+          "https://www.csrc.gov.cn/csrc/cn/tzzgz/tzzgz/202309/t20230915_486725.htm"
+        ],
+        "citedCount": 2,
+        "usableCitedCount": 2,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-13",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          3,
+          5
+        ],
+        "urls": [],
+        "citedCount": 3,
+        "usableCitedCount": 3,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-14",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1
+        ],
+        "urls": [],
+        "citedCount": 1,
+        "usableCitedCount": 1,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-15",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          3,
+          4
+        ],
+        "urls": [],
+        "citedCount": 2,
+        "usableCitedCount": 2,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "ans-16",
+      "category": "answerable",
+      "citation": {
+        "markers": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "urls": [],
+        "citedCount": 4,
+        "usableCitedCount": 4,
+        "unresolved": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-01",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-02",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-03",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-04",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-05",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "nos-06",
+      "category": "no_source",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "refusal": {
+        "usableSourceCount": 0,
+        "limitationStated": true,
+        "citedEvidence": false,
+        "urlsMentioned": [],
+        "pass": true
+      }
+    },
+    {
+      "caseId": "clr-01",
+      "category": "clarify",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "clarifyPass": true
+    },
+    {
+      "caseId": "clr-02",
+      "category": "clarify",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "clarifyPass": true
+    },
+    {
+      "caseId": "clr-03",
+      "category": "clarify",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "clarifyPass": true
+    },
+    {
+      "caseId": "clr-04",
+      "category": "clarify",
+      "citation": {
+        "markers": [],
+        "urls": [],
+        "citedCount": 0,
+        "usableCitedCount": 0,
+        "unresolved": [],
+        "pass": null
+      },
+      "clarifyPass": true
+    }
+  ],
+  "summary": {
+    "citationGuard": {
+      "answersModified": {
+        "passed": 7,
+        "n": 22,
+        "rate": 0.3181818181818182
+      },
+      "removedMarkers": 8,
+      "removedUrls": 8
+    },
+    "cases": 26,
+    "completed": 26,
+    "failedOrTimeout": 0,
+    "citation": {
+      "answerPassRate": {
+        "passed": 16,
+        "n": 16,
+        "rate": 1.0
+      },
+      "citationPrecision": {
+        "passed": 43,
+        "n": 43,
+        "rate": 1.0
+      },
+      "answerableWithoutCitation": 0,
+      "answerableWithZeroUsableSources": 0,
+      "allCategoriesAnswerPassRate": {
+        "passed": 16,
+        "n": 16,
+        "rate": 1.0
+      }
+    },
+    "refusal": {
+      "passed": 6,
+      "n": 6,
+      "rate": 1.0,
+      "stubEffective": 6
+    },
+    "clarify": {
+      "passed": 4,
+      "n": 4,
+      "rate": 1.0
+    },
+    "fetchedUsable": {
+      "passed": 50,
+      "n": 80,
+      "rate": 0.625
+    },
+    "routing": {
+      "answerable:research": 16,
+      "no_source:research": 6,
+      "clarify:clarify": 4
+    },
+    "latency": {
+      "all": {
+        "n": 26,
+        "p50Ms": 25065,
+        "p90Ms": 55669,
+        "meanMs": 29867
+      },
+      "answerable": {
+        "n": 16,
+        "p50Ms": 41402,
+        "p90Ms": 58850,
+        "meanMs": 43108
+      },
+      "no_source": {
+        "n": 6,
+        "p50Ms": 11007,
+        "p90Ms": 17680,
+        "meanMs": 12816
+      },
+      "clarify": {
+        "n": 4,
+        "p50Ms": 2459,
+        "p90Ms": 2865,
+        "meanMs": 2484
+      }
+    }
+  }
+}
