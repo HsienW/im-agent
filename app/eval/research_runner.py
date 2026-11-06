@@ -144,7 +144,7 @@ def render_report(
         row(f"Latency P50 / P90 — {category}", lambda s, c=category: _latency(s["latency"].get(c)))
     if any(run["summary"].get("citationGuard") for run in columns):
         row(
-            "Citation guard: research answers modified",
+            "Citation guard: answers modified (research + direct)",
             lambda s: _pct(s["citationGuard"]["answersModified"]) if s.get("citationGuard") else "-",
         )
         row(

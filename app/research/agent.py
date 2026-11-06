@@ -12,7 +12,8 @@
 * fetch / extract: top-5 pages; a source is usable when the fetch had no error and the readable
   text is at least 200 characters.
 * synthesize: only usable sources are numbered in the evidence; with the citation guard on, every
-  ``[n]`` or URL in the answer that does not point at a usable source is removed afterwards.
+  ``[n]`` or URL in the answer that does not point at a usable source is removed afterwards. Direct
+  answers are guarded too: they have no sources, so any marker or URL they contain is removed.
 
 Search and fetch are injected as async callables so tests can run the graph offline.
 """
@@ -117,6 +118,15 @@ SYNTHESIS_POLICY = [
     "If evidence contains tool/API errors or no usable sources, state the limitation clearly and do not fabricate facts.",
     "For web research answers, cite sources inline with [1], [2], etc. using the evidence index numbers.",
     "Keep the answer concise but include exact numbers, dates, and source limitations when relevant.",
+]
+
+
+DIRECT_POLICY = [
+    "You are the final answer node of a research graph. The planner decided this request needs no web research, "
+    "so no sources were retrieved.",
+    "Answer the user in the same language as the user unless they requested otherwise.",
+    "Answer from general knowledge, concisely. Do not use [n] citation markers, do not write URLs and do not claim "
+    "that sources were consulted.",
 ]
 
 
@@ -352,28 +362,28 @@ def build_research_graph(
         research = current["answerMode"] == "research"
         if research:
             evidence = format_guarded_evidence(state) if citation_guard else format_unguarded_evidence(state)
+            policy = SYNTHESIS_POLICY + (CITATION_GUARD_POLICY if citation_guard else [])
         else:
             evidence = ""
-        policy = SYNTHESIS_POLICY + (CITATION_GUARD_POLICY if citation_guard else []) + [f"Today is {current_date()}."]
+            policy = DIRECT_POLICY
+        policy = policy + [f"Today is {current_date()}."]
         public_plan = {key: value for key, value in current.items() if key != "plannerFallback"}
-        prompt = "\n\n".join(
-            [
-                "\n\n".join(policy),
-                f"Plan: {json.dumps(public_plan, ensure_ascii=False, indent=2)}",
+        sections = ["\n\n".join(policy), f"Plan: {json.dumps(public_plan, ensure_ascii=False, indent=2)}"]
+        if research:
+            sections += [
                 f"Verification: {json.dumps(state.get('verification', {}), ensure_ascii=False, indent=2)}",
                 "Evidence:",
                 evidence or "No external evidence was collected.",
-                "Conversation:",
-                current["question"],
             ]
-        )
+        prompt = "\n\n".join(sections + ["Conversation:", current["question"]])
         try:
             answer = _content(await synthesis_model.ainvoke(prompt))
         except Exception as error:
             return {"answer": f"Research synthesis failed: {type(error).__name__}: {error}"[:500], "citation_guard": None}
-        if not (citation_guard and research):
+        if not citation_guard:
             return {"answer": answer, "citation_guard": None}
-        guarded, report = guard_citations(answer, state.get("extracted_sources", []))
+        # Direct answers have no sources, so the guard removes every [n] marker and URL they contain.
+        guarded, report = guard_citations(answer, state.get("extracted_sources", []) if research else [])
         return {"answer": guarded, "citation_guard": asdict(report)}
 
     def after_plan(state: ResearchState) -> str:

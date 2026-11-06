@@ -435,3 +435,21 @@ def test_report_renders_recorded_run(tmp_path):
     assert "| Metric | python:guard | ts:guard |" in report
     assert "| Citation verification pass rate | 100.0% (14/14) | 100.0% (14/14) |" in report
     assert "| Latency P50 / P90 — all | 23.8s / 42.8s (n=26) | 23.8s / 42.8s (n=26) |" in report
+
+
+@pytest.mark.asyncio
+async def test_direct_answers_are_guarded_against_invented_citations():
+    calls = []
+    synthesis = FakeModel("HTTP 429 means Too Many Requests [1]; wait per Retry-After [2] (https://made.up/rfc).")
+    graph = build_research_graph(
+        planner_model=FakeModel(plan_json(answerMode="direct", queries=[], freshness="")),
+        synthesis_model=synthesis,
+        search=make_search(calls=calls),
+        fetch=make_fetch({}),
+    )
+    trace = to_observation(await graph.ainvoke({"question": "What does HTTP 429 mean?"}))
+    assert calls == [] and trace["answerMode"] == "direct"
+    assert trace["answer"] == "HTTP 429 means Too Many Requests; wait per Retry-After."
+    assert trace["citationGuard"] == {"modified": True, "removedMarkers": 2, "removedUrls": 1}
+    assert "Do not use [n] citation markers" in synthesis.prompts[0]
+    assert "Evidence:" not in synthesis.prompts[0]
