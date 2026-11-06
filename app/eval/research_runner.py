@@ -32,7 +32,15 @@ from dotenv import load_dotenv
 
 from app.eval.research_metrics import CATEGORIES, score_case, summarize_run
 from app.research.agent import build_research_graph, to_observation
-from app.research.web import FetchResult, doh_resolver, fetch_page, system_resolver, tavily_search
+from app.research.web import (
+    FETCH_TIMEOUT_S,
+    SEARCH_TIMEOUT_S,
+    FetchResult,
+    doh_resolver,
+    fetch_page,
+    system_resolver,
+    tavily_search,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data" / "research-eval"
@@ -228,7 +236,12 @@ async def run_cases(
     active_stub: dict[str, str | None] = {"value": None}
     observations: list[dict[str, Any]] = []
 
-    async with httpx.AsyncClient() as search_client, httpx.AsyncClient() as fetch_client, httpx.AsyncClient() as dns_client:
+    # httpx defaults to a 5 s timeout per phase; match the TypeScript tools (15 s search, 12 s fetch).
+    async with (
+        httpx.AsyncClient(timeout=SEARCH_TIMEOUT_S) as search_client,
+        httpx.AsyncClient(timeout=FETCH_TIMEOUT_S) as fetch_client,
+        httpx.AsyncClient(timeout=5.0) as dns_client,
+    ):
         resolver = doh_resolver(doh_url, dns_client) if doh_url else system_resolver
 
         async def search(query: str, time_range: str | None):
