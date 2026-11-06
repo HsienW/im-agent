@@ -1,0 +1,28 @@
+{
+  "implementation": "Python (im-agent-python app/research, LangGraph StateGraph)",
+  "datasetVersion": "research-eval-v1",
+  "datasetSha256": "d27b1a738e8e61d076dadd7646310a11908a6f37bb7848938ea18a7c679c690d",
+  "runnerVersion": "python-research-eval-runner-v1",
+  "rankings": [
+    "guard"
+  ],
+  "llmProvider": "qwen",
+  "plannerModel": "qwen-plus",
+  "synthesisModel": "qwen-plus",
+  "searchProvider": "Tavily Search API (basic depth, 8 results per query)",
+  "caseCount": 26,
+  "date": "2026-11-06",
+  "commit": "guard@9bbd73b",
+  "commits": {
+    "guard": "9bbd73b"
+  },
+  "latencyScope": "wall-clock per graph invocation on a local developer machine, cases run sequentially (single concurrency), including LLM, search and fetch calls; not a production latency.",
+  "notes": [
+    "Executed as a local Python process (app.eval.research_runner) against live qwen and Tavily APIs.",
+    "no_source cases stub the tools in the runner: empty_search returns zero search results and fails every fetch (planner-supplied URLs unreachable); fetch_fail fails every fetch. All other cases used live Tavily search and live page fetches.",
+    "Live web results change over time; reruns will not reproduce identical numbers.",
+    "Searches and fetches run sequentially, as in the TypeScript agent; top-5 ranked sources are fetched.",
+    "The local resolver returned fake-ip (198.18.0.0/15) answers, so the public-address check used DNS over HTTPS (https://223.5.5.5/resolve); connections then went through the system proxy settings.",
+    "Known defect at this commit: the citation guard ran only for answerMode=research. The planner routed 4/16 answerable cases to direct (the TypeScript guard run routed 2/16), and 2 of those direct answers (ans-05, ans-07) contained invented [1]/[2] markers with no sources, which failed citation verification. Fixed afterwards (direct prompt plus guard on direct answers); see run r3."
+  ]
+}
