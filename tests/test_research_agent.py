@@ -109,6 +109,15 @@ def test_planner_validates_and_trims_queries():
     assert plan["plannerFallback"] is False
 
 
+def test_planner_ignores_invalid_optional_fields():
+    raw = plan_json(freshness="", clarification="", requiredSourceCount="many", queries=["rrf k constant"])
+    plan = coerce_plan(raw, "What is RRF?")
+    assert plan["plannerFallback"] is False
+    assert plan["queries"] == ["rrf k constant"]
+    assert plan["freshness"] is None and plan["clarification"] is None
+    assert plan["requiredSourceCount"] == 3
+
+
 @pytest.mark.asyncio
 async def test_planner_llm_error_still_researches_question():
     calls = []

@@ -27,7 +27,7 @@ from dataclasses import asdict
 from typing import Any, Literal, TypedDict
 
 from langgraph.graph import END, START, StateGraph
-from pydantic import BaseModel, ConfigDict, Field, ValidationError
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
 
 from app.research.citation_guard import CITATION_GUARD_POLICY, guard_citations
 from app.research.ranking import ExtractedSource, RankedSource, excerpt, extract_evidence, rank_sources
@@ -56,6 +56,26 @@ class PlannerOutput(BaseModel):
     freshness: Literal["pd", "pw", "pm", "py"] | None = None
     clarification: str | None = None
     requiredSourceCount: int = 3
+
+    # Optional fields degrade instead of failing the whole plan, as chat-gun's coercePlan does:
+    # research-eval-v1 run r1 had 4/26 plans rejected only because qwen wrote "freshness": "".
+    @field_validator("freshness", mode="before")
+    @classmethod
+    def _optional_freshness(cls, value: Any) -> Any:
+        return value if value in FRESHNESS_TO_TIME_RANGE else None
+
+    @field_validator("clarification", mode="before")
+    @classmethod
+    def _optional_clarification(cls, value: Any) -> Any:
+        return value if isinstance(value, str) and value.strip() else None
+
+    @field_validator("requiredSourceCount", mode="before")
+    @classmethod
+    def _optional_source_count(cls, value: Any) -> Any:
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return 3
 
 
 class ResearchState(TypedDict, total=False):
